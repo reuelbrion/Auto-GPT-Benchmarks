@@ -1,0 +1,22 @@
+{
+  "name": "TestTargetedContentGen",
+  "category": ["content_gen"],
+  "task": "Create a brief report or summary of the news items on https://adanews.ada.org/latest-news/ this last week. Write a file called output.txt.",
+  "dependencies": [],
+  "ground": {
+    "answer": "A report summarizing last week's news items found through the given url.",
+    "should_contain": ["Should summarize each news article up to one week old."],
+    "should_not_contain": ["Should not talk about articles more than one week old."],
+    "files": ["output.txt"],
+    "eval": {
+      "type": "llm",
+      "scoring": "binary",
+      "template": "question"
+    }
+  },
+  "info": {
+    "difficulty": "basic",
+    "description": "Tests ability to generate content based on a url source and a time period.",
+    "side_effects": []
+  }
+}
